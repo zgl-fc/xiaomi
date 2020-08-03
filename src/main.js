@@ -5,6 +5,7 @@ import store from './store'
 import axios from 'axios'
 import vueAxios from 'vue-axios'
 import VueCookie from 'vue-cookie'
+import "swiper/css/swiper.css";
 // import env from './env'
 // 在做了代理的时候直接写个短地址就行了
 

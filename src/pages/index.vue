@@ -141,7 +141,6 @@
 <script>
 import ServiceBar from "../components/ServiceBar";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
-import "swiper/css/swiper.css";
 export default {
   name: "index",
   components: {
@@ -202,9 +201,11 @@ export default {
 </script>
 
 <style lang="scss">
-.swiper-container-horizontal > .swiper-pagination-bullets {
-  width:auto;
-  left:1120px;
+.swiper-box {
+  .swiper-pagination-bullets {
+    width: auto !important;
+    left: 1120px !important;
+  }
 }
 </style>
 <style lang="scss" scoped>

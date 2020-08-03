@@ -109,7 +109,6 @@
 <script>
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import ProductParam from "../components/ProductParam";
-import "swiper/css/swiper.css";
 export default {
   name: "product",
   components: {
@@ -145,7 +144,7 @@ export default {
     },
     buy() {
       let id = this.$route.params.id;
-      this.$router.push(`/detail/${id}`)
+      this.$router.push(`/detail/${id}`);
     },
     closeVideo() {
       this.showSlide = "slideUp";
@@ -158,14 +157,16 @@ export default {
 </script>
 
 <style lang="scss">
-.swiper-container {
-  padding-bottom: 31px;
-  .swiper-pagination-bullets {
-    bottom: 0px;
-    .swiper-pagination-bullet {
-      width: 38px;
-      height: 7px;
-      border-radius: 0;
+.product {
+  .swiper-container {
+    padding-bottom: 31px;
+    .swiper-pagination-bullets {
+      bottom: 0px;
+      .swiper-pagination-bullet {
+        width: 38px;
+        height: 7px;
+        border-radius: 0;
+      }
     }
   }
 }
