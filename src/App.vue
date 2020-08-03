@@ -12,24 +12,33 @@ export default {
   },
   data() {
     return {
-      res:{}
+
     }
   },
   mounted() {
-    //1.public下面的mock json public是根目录
-    // 1.本地加载请求静态json文件形式
-    // this.axios.get('/mock/user/login.json').then(res => {
-    //   this.res = res
-    // })
-    // 2.easymock模拟接口
-    this.axios.get('/user/login').then(res => {
-      this.res = res
-    })
-    // 3.本地集成mock.js实现数据mock
+    if(this.$cookie.get('useId')) {
+      this.getUser();
+      this.getCartCount();
+    }
+  },
+  methods:{
+    getUser(){
+      this.axios.get('/user').then((res={})=>{
+        this.$store.dispatch('saveUserName',res.username);
+      })
+    },
+    getCartCount(){
+      this.axios.get('/carts/products/sum').then((res=0)=>{
+        this.$store.dispatch('saveCartCount',res);
+      })
+    }
   }
 }
 </script>
 
 <style lang="scss">
-
+@import './assets/scss/reset.scss';
+@import './assets/scss/config.scss';
+@import './assets/scss/button.scss';
+@import './assets/scss/base.scss';
 </style>
